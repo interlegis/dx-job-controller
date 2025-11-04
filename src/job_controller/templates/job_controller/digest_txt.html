@@ -1,0 +1,8 @@
+{% load i18n %}{% translate "report" as t_report %}{% blocktranslate with digest_days=job.digest_days asvar t_last_days %}Last {digest_days} days{% endblocktranslate %}{{ job.get_description }} ({{ job.job_name }}) {% if job.digest_days == 0 %}{{ t_report}}{% else %}{{ t_last_days }}{% endif %}
+{% for s in job.get_description %}={% endfor %}=={% for s in job.job_name %}={% endfor %}=={% if job.digest == 0 %}{% for s in t_report %}={% endfor %}{% else %}{% for s in t_last_days %}={% endfor %}{% endif %}
+
+{% for run in rounds %}{% blocktranslate with started=run.started|date:"SHORT_DATETIME_FORMAT" time_spent=run.get_time_spent_display %}* runned at {{ started }} taking {{ time_spent }} to finish:{% endblocktranslate %}{% if run.result == "" %}{% translate " no reports" %}{% else %}
+
+{% for row in run.result.splitlines %}   {{ row }}
+{% endfor %}{% endif %}
+{% endfor %}

@@ -1,0 +1,26 @@
+{% load i18n %}
+<h1>
+  {{ job.get_description }} ({{ job.job_name }})
+  {% if job.digest_days == 0 %}
+    {% translate "report" %}
+  {% else %}
+    {% blocktranslate with digest_days=job.digest_days %}Last {digest_days} days{% endblocktranslate %}
+  {% endif %}
+</h1>
+
+<ul>
+  {% for run in rounds %}
+    <li>
+      <strong>
+        {% blocktranslate with started=run.started|date:"SHORT_DATETIME_FORMAT" time_spent=run.get_time_spent_display %}
+          runned at {{ started }} taking {{ time_spent }} to finish:
+        {% endblocktranslate %}
+      </strong>
+      {% if run.result == "" %}
+        {% translate " no reports" %}
+      {% else %}
+        <pre>{{ run.result }}</pre>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
