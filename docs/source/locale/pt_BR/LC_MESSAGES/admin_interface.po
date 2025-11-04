@@ -1,0 +1,101 @@
+# DX-JOB-CONTROLLER DOCUMENTATION.
+# Copyright (C) 2025, Interlegis / Senado Federal
+# This file is distributed under the same license as the DX-JOB-CONTROLLER
+# package.
+# SESÓSTRIS VIEIRA <SEVIEIRA@SENADO.LEG.BR>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: dx-job-controller 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-29 21:38-0300\n"
+"PO-Revision-Date: 2025-10-29 21:38+0300\n"
+"Last-Translator: SESÓSTRIS VIEIRA <SEVIEIRA@SENADO.LEG.BR>\n"
+"Language-Team: pt_BR <LL@li.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/admin_interface.rst:2
+msgid "Admin interface"
+msgstr "Interface administrativa"
+
+#: ../../source/admin_interface.rst
+msgid "synopsis"
+msgstr "sinopse"
+
+#: ../../source/admin_interface.rst:4
+msgid "Django admin interface to manage cronjobs."
+msgstr "Interface administrativa do Django para gerenciar cron jobs."
+
+#: ../../source/admin_interface.rst:6
+msgid ""
+"Once installed, **dx-job-controller** is available in the Django admin "
+"interface panel with two accessible classes:"
+msgstr ""
+"Após a instalação, o **dx-job-controller** estará disponível no painel de "
+"administração do Django com duas classes acessíveis:"
+
+#: ../../source/admin_interface.rst:13
+msgid "Cronjobs"
+msgstr "Jobs agendados"
+
+#: ../../source/admin_interface.rst:15
+msgid ""
+"The ``Cronjobs`` class allows you to view and manage all existing jobs in "
+"the system:"
+msgstr ""
+"A classe ``Jobs agendados`` permite visualizar e gerenciar todos os jobs "
+"existentes no sistema:"
+
+#: ../../source/admin_interface.rst:21
+msgid ""
+"The **run** column in the listview allows you to run the job immediately."
+msgstr "A coluna **executar** na listview permite executar o job imediatamente."
+
+#: ../../source/admin_interface.rst:23
+msgid ""
+"In the change form of `Cronjobs` is possible to configure the execution of "
+"the job (see: :doc:`managing_jobs`):"
+msgstr ""
+"No `change form` de `Jobs agendados` é possível configurar a execução da"
+" tarefa (consulte: :doc:`managing_jobs`):"
+
+#: ../../source/admin_interface.rst:28
+msgid ""
+"The list of job schedules is displayed as a `TabularInline`. The "
+"**view/run** column provides the oportunity to run (if job schedule is in "
+"Scheduled status) or view details of scheduled execution."
+msgstr ""
+"A lista de `executar agendamentos` é exibida como um `TabularInline`. A "
+"coluna **ver/executar** oferece a opção de executar (se o agendamento"
+" da tarefa estiver com status Agendado) ou visualizar os detalhes da execução"
+" agendada."
+
+#: ../../source/admin_interface.rst:33
+msgid "Schedules"
+msgstr "Agendamentos"
+
+#: ../../source/admin_interface.rst:35
+msgid ""
+"The `Run schedules` listview lists all scheduled job executions. You can "
+"filter by `status` (scheduled, running, finished) and by `cronjob`:"
+msgstr ""
+"A listview de executar agendamento exibe todas as execuções de tarefas agendadas. "
+"Você pode filtrar por `status` (agendado, em execução, concluído) e por "
+"`cronjob`:"
+
+#: ../../source/admin_interface.rst:40
+msgid "It also has a **run** column to immediately run the scheduled job."
+msgstr ""
+"Também possui uma coluna **executar** para executar imediatamente a tarefa "
+"agendada."
+
+#: ../../source/admin_interface.rst:42
+msgid "The schedules `View form` displays details of execution:"
+msgstr ""
+"O `View form` dos agendamentos exibe detalhes da execução:"

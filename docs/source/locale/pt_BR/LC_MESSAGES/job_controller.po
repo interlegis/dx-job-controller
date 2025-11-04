@@ -1,0 +1,148 @@
+# DX-JOB-CONTROLLER DOCUMENTATION.
+# Copyright (C) 2025, Interlegis / Senado Federal
+# This file is distributed under the same license as the DX-JOB-CONTROLLER
+# package.
+# SESÓSTRIS VIEIRA <SEVIEIRA@SENADO.LEG.BR>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: dx-job-controller 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-29 21:38-0300\n"
+"PO-Revision-Date: 2025-10-29 21:38+0300\n"
+"Last-Translator: SESÓSTRIS VIEIRA <SEVIEIRA@SENADO.LEG.BR>\n"
+"Language-Team: pt_BR <LL@li.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/job_controller.rst:2
+msgid "Job controller"
+msgstr "Job controller - controlador de jobs"
+
+#: ../../source/job_controller.rst
+msgid "synopsis"
+msgstr "sinopse"
+
+#: ../../source/job_controller.rst:4
+msgid "How the job-controller works"
+msgstr "Como o job controller funciona"
+
+#: ../../source/job_controller.rst:6
+msgid ""
+"The job controller is a common job created with `django-extensions` to "
+"control other jobs in the system. Ideally, it should run every minute, but "
+"this isn't mandatory and will depend on your needs."
+msgstr ""
+"O job controller é um job comum criado com `django-extensions` "
+"para controlar outros jobs no sistema. Idealmente, ele deve ser executado"
+" a cada minuto, mas isso não é obrigatório e dependerá das suas "
+"necessidades."
+
+#: ../../source/job_controller.rst:10
+msgid "Its ``run`` method executes the following tasks in sequence:"
+msgstr "Seu método ``run`` executa as seguintes tarefas em sequência:"
+
+#: ../../source/job_controller.rst:13
+msgid "Remove old jobs"
+msgstr "Remove jobs antigos"
+
+#: ../../source/job_controller.rst:15
+msgid ""
+"Remove from the jobs table those that were removed from the code. Whenever a"
+" job is removed from the code, its record in the `cronjobs` table is also "
+"removed, along with all execution and scheduling records."
+msgstr ""
+"Remove da tabela de jobs aqueles que foram removidos do código. Sempre "
+"que um job é removido do código, seu registro na tabela `cronjobs` "
+"também é removido, juntamente com todos os registros de execução e "
+"agendamento."
+
+#: ../../source/job_controller.rst:20
+msgid "Sync new jobs"
+msgstr "Sincronizar novos jobs"
+
+#: ../../source/job_controller.rst:22
+msgid ""
+"Add in the jobs table those new jobs that were been created in the code. "
+"Whenever a new job is created in the code, a record in the cronjobs table is"
+" added to represent it in the admin interface."
+msgstr ""
+"Adiciona à tabela de jobs os novos jobs que foram criados no código. "
+"Sempre que um novo job é criado no código, um registro na tabela "
+"cronjobs é adicionado para representá-lo na interface administrativa."
+
+#: ../../source/job_controller.rst:27
+msgid "Run scheduled jobs"
+msgstr "Executar jobs agendados"
+
+#: ../../source/job_controller.rst:29
+msgid ""
+"IdentiIdentifies the jobs that are scheduled to run at this time (scheduled "
+"start is less than or equal to now) and invokes them encapsulated in a "
+"``threading.Thread`` object to take advantage from execution parallelism."
+msgstr ""
+"Identifica os jobs agendados para serem executados neste momento (início "
+"agendado é menor ou igual a agora) e os invoca encapsulados em um objeto "
+"``threading.Thread`` para aproveitar o paralelismo de execução."
+
+#: ../../source/job_controller.rst:33
+msgid ""
+"The schedule status is changed to `Running` to ensure that neither the user "
+"nor another instance of the `job-controller` starts another job execution."
+msgstr ""
+"O status do agendamento é alterado para `Em execução` para garantir que nem "
+"o usuário nem outra instância do `job-controller` inicie outra execução deste "
+"job."
+
+#: ../../source/job_controller.rst:36
+msgid ""
+"If the running job throws any exception, the error message will be captured "
+"and saved in the `Jobschedule` result field and the `has_errors` field will "
+"be set to True."
+msgstr ""
+"Se o job em execução gerar alguma exceção, a mensagem de erro será "
+"capturada e salva no campo `result` do `Jobschedule` e o campo "
+"`has_errors` será definido como True."
+
+#: ../../source/job_controller.rst:40
+msgid ""
+"`Stdout` and `stderr` are captured and added to the Jobschedule's `result` "
+"field. If there is any text in `stderr`, the `has_errors` field is set to "
+"True."
+msgstr ""
+"`Stdout` e `stderr` são capturados e adicionados ao campo `result` do "
+"Jobschedule. Se houver algum texto em `stderr`, o campo `has_errors` será "
+"definido como True."
+
+#: ../../source/job_controller.rst:44
+msgid "Schedule jobs"
+msgstr "Agendar jobs"
+
+#: ../../source/job_controller.rst:46
+msgid ""
+"Creates scheduling records to the next execution for jobs that do not have "
+"any records with the status `running` or `scheduled`."
+msgstr ""
+"Cria registros de agendamento para a próxima execução dos jobs que não têm "
+"registros com o status `em execução` ou `agendado`."
+
+#: ../../source/job_controller.rst:50
+msgid "Digest emails"
+msgstr "E-mails de resumo"
+
+#: ../../source/job_controller.rst:52
+msgid "Generates log summary and send it by email."
+msgstr "Gera um resumo de log e o envia por e-mail."
+
+#: ../../source/job_controller.rst:55
+msgid "Remove old logs"
+msgstr "Remove logs antigos"
+
+#: ../../source/job_controller.rst:57
+msgid "Delete old logs from database."
+msgstr "Exclui logs antigos do banco de dados."

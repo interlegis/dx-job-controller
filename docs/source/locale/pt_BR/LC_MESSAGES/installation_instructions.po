@@ -1,0 +1,136 @@
+# DX-JOB-CONTROLLER DOCUMENTATION.
+# Copyright (C) 2025, Interlegis / Senado Federal
+# This file is distributed under the same license as the DX-JOB-CONTROLLER
+# package.
+# SESÓSTRIS VIEIRA <SEVIEIRA@SENADO.LEG.BR>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: dx-job-controller 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-29 21:38-0300\n"
+"PO-Revision-Date: 2025-10-29 21:38+0300\n"
+"Last-Translator: SESÓSTRIS VIEIRA <SEVIEIRA@SENADO.LEG.BR>\n"
+"Language-Team: pt_BR <LL@li.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/installation_instructions.rst:2
+msgid "Installation instructions"
+msgstr "Instruções de instalação"
+
+#: ../../source/installation_instructions.rst
+msgid "synopsis"
+msgstr "sinopse"
+
+#: ../../source/installation_instructions.rst:4
+msgid "Installing dx-job-controller"
+msgstr "Instalando dx-job-controller"
+
+#: ../../source/installation_instructions.rst:7
+msgid "Installing"
+msgstr "Instalando"
+
+#: ../../source/installation_instructions.rst:9
+msgid "You can use pip to install dx-job-controller for usage::"
+msgstr ""
+"Você pode usar o pip para instalar o dx-job-controller usando::"
+
+#: ../../source/installation_instructions.rst:14
+msgid "Development"
+msgstr "Desenvolvimento"
+
+#: ../../source/installation_instructions.rst:16
+msgid "dx-job-controller is hosted on github::"
+msgstr "O dx-job-controller está hospedado no GitHub::"
+
+#: ../../source/installation_instructions.rst:20
+msgid "Source code can be accessed by performing a Git clone."
+msgstr "O código-fonte pode ser acessado clonando o repositório Git."
+
+#: ../../source/installation_instructions.rst:22
+msgid ""
+"Tracking the development version of *dx-job-controller* should be pretty "
+"stable and will keep you up-to-date with the latest fixes."
+msgstr ""
+"Acompanhar a versão de desenvolvimento do *dx-job-controller* deve ser "
+"bastante estável e manterá você atualizado com as correções mais recentes."
+
+#: ../../source/installation_instructions.rst:25
+msgid ""
+"$ pip install -e git+https://github.com/interlegis/dx-job-"
+"controller.git#egg=dx-job-controller"
+msgstr ""
+"$ pip install -e git+https://github.com/interlegis/dx-job-"
+"controller.git#egg=dx-job-controller"
+
+#: ../../source/installation_instructions.rst:27
+msgid "You find the sources in src/job-controller now."
+msgstr "Você encontra os arquivos-fonte em src/job-controller agora."
+
+#: ../../source/installation_instructions.rst:29
+msgid ""
+"Keep in mind that the current code in the git repository may be different "
+"from the packaged release. It may contain bugs and backwards-incompatible "
+"changes but most likely also new goodies to play with."
+msgstr ""
+"Lembre-se de que o código atual no repositório git pode ser diferente da "
+"versão empacotada. Ele pode conter bugs e alterações incompatíveis com "
+"versões anteriores, mas provavelmente também novas funcionalidades "
+"interessantes para experimentar."
+
+#: ../../source/installation_instructions.rst:35
+msgid "Configuration"
+msgstr "Configuração"
+
+#: ../../source/installation_instructions.rst:37
+msgid ""
+"To enable `dx-job-controller` in your project you need to add "
+"``job_controller`` and ``django_extensions`` to ``INSTALLED_APPS`` in your "
+"project's `settings.py` file:"
+msgstr ""
+"Para habilitar o `dx-job-controller` em seu projeto, você precisa adicionar "
+"``job_controller`` e ``django_extensions`` a ``INSTALLED_APPS`` no arquivo "
+"`settings.py` do seu projeto:"
+
+#: ../../source/installation_instructions.rst:49
+msgid ""
+"run ``python manage.py migrate`` to create dx-job-controller database "
+"tables."
+msgstr ""
+"execute ``python manage.py migrate`` para criar as tabelas do banco de dados"
+" do dx-job-controller."
+
+#: ../../source/installation_instructions.rst:51
+msgid ""
+"The next time you run your project and access the Django admin, voila! it "
+"will already have the Job controller app listed in your admin dashboard!"
+msgstr ""
+"Na próxima vez que você executar seu projeto e acessar o painel de "
+"administração do Django, voilà! ele já terá o aplicativo Job controller "
+"listado no seu painel de administração!"
+
+#: ../../source/installation_instructions.rst:54
+msgid ""
+"To ensure that django-extensions jobs are loaded and run, add the following "
+"entry to your `crontab <https://man7.org/linux/man-"
+"pages/man5/crontab.5.html>`__:"
+msgstr ""
+"Para garantir que os jobs do django-extensions sejam carregados e "
+"executados, adicione a seguinte entrada ao seu `crontab "
+"<https://man7.org/linux/man-pages/man5/crontab.5.html>`__:"
+
+#: ../../source/installation_instructions.rst:62
+msgid ""
+"this runs the ``job_controller`` job every minute and adds its output to the"
+" file `/var/log/django_cron.log`. See :doc:`job_controller` for more "
+"details."
+msgstr ""
+"Isso executa o job ``job_controller`` a cada minuto e adiciona sua saída ao "
+"arquivo `/var/log/django_cron.log`. Consulte :doc:`job_controller` para mais"
+" detalhes."

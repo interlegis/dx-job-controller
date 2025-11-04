@@ -1,0 +1,211 @@
+# DX-JOB-CONTROLLER DOCUMENTATION.
+# Copyright (C) 2025, Interlegis / Senado Federal
+# This file is distributed under the same license as the DX-JOB-CONTROLLER
+# package.
+# SESÓSTRIS VIEIRA <SEVIEIRA@SENADO.LEG.BR>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: dx-job-controller 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-29 21:38-0300\n"
+"PO-Revision-Date: 2025-10-29 21:38+0300\n"
+"Last-Translator: SESÓSTRIS VIEIRA <SEVIEIRA@SENADO.LEG.BR>\n"
+"Language-Team: pt_BR <LL@li.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/digest_mail.rst:2
+msgid "Digest mail"
+msgstr "E-mail de resumo"
+
+#: ../../source/digest_mail.rst
+msgid "synopsis"
+msgstr "sinopse"
+
+#: ../../source/digest_mail.rst:4
+msgid "Explains digest mail functionality"
+msgstr "Explica a funcionalidade do e-mail de resumo"
+
+#: ../../source/digest_mail.rst:7
+msgid "How it works"
+msgstr "Como funciona"
+
+#: ../../source/digest_mail.rst:9
+msgid ""
+"Jobs are executed within a `try` ... `exception` block. If an exception is "
+"thrown, its error message is persisted in the `result` field of the "
+"`Jobschedule` object."
+msgstr ""
+"Os jobs são executados dentro de um bloco `try` ... `exception`. Se uma "
+"exceção for lançada, sua mensagem de erro será persistida no campo `result` "
+"do objeto `Jobschedule`."
+
+#: ../../source/digest_mail.rst:13
+msgid ""
+"Additionally, the outputs of `stdout` and `stderr` are captured and "
+"persisted in the same way as error messages."
+msgstr ""
+"Além disso, as saídas de `stdout` e `stderr` são capturadas e persistidas da"
+" mesma forma que as mensagens de erro."
+
+#: ../../source/digest_mail.rst:16
+msgid ""
+"When an error occurs, either due to an exception or some text present in "
+"`stderr`, the `has_error` flag in the `Jobschedule` object is set to `True` "
+"to indicate that this execution encountered problems."
+msgstr ""
+"Quando ocorre um erro, seja devido a uma exceção ou a algum texto presente "
+"em `stderr`, o flag `has_error` no objeto `Jobschedule` é definido "
+"como `True` para indicar que esta execução encontrou problemas."
+
+#: ../../source/digest_mail.rst:20
+msgid ""
+"Therefore, when writing your jobs, it is a good practice to throw exceptions"
+" when critical problems that prevent the `job` from completing occur, and to"
+" send non-critical error and warning messages to `stderr`. To print to "
+"`stderr` in Python, use the syntax:"
+msgstr ""
+"Portanto, ao escrever seus jobs, é uma boa prática lançar exceções quando "
+"problemas críticos que impedem a conclusão do `job` ocorrerem, e enviar "
+"mensagens de erro e aviso não críticos para `stderr`. Para imprimir em "
+"`stderr` em Python, use a sintaxe:"
+
+#: ../../source/digest_mail.rst:30
+msgid "If necessary, explanatory messages can be sent to `stdout`."
+msgstr ""
+"Se necessário, mensagens explicativas podem ser enviadas para `stdout`."
+
+#: ../../source/digest_mail.rst:33
+msgid "Execution summaries"
+msgstr "Resumos de execução"
+
+#: ../../source/digest_mail.rst:35
+msgid ""
+"Execution summaries are produced by combining one or more execution logs, "
+"depending on the frequency of summary submissions."
+msgstr ""
+"Os resumos de execução são produzidos combinando um ou mais logs de "
+"execução, dependendo da frequência de envio dos resumos."
+
+#: ../../source/digest_mail.rst:38
+msgid "Two templates are used to generate the summary report:"
+msgstr "Dois templates são usados ​​para gerar o relatório de resumo:"
+
+#: ../../source/digest_mail.rst:40
+msgid "`job_controller/digest_txt.html` and"
+msgstr "`job_controller/digest_txt.html` e"
+
+#: ../../source/digest_mail.rst:41
+msgid "`job_controller/digest_html.html`."
+msgstr "`job_controller/digest_html.html`."
+
+#: ../../source/digest_mail.rst:43
+msgid ""
+"The first generates a plain text containing the logs to be sent, and the "
+"other generates an HTML snippet of the same logs."
+msgstr ""
+"O primeiro gera um texto simples contendo os logs a serem enviados, e o "
+"outro gera um trecho HTML dos mesmos logs."
+
+#: ../../source/digest_mail.rst:46
+msgid "Both templates receive the following context variables:"
+msgstr "Ambos os templates recebem as seguintes variáveis ​​de contexto:"
+
+#: ../../source/digest_mail.rst:48
+msgid "**job**: The Cronjob object being processed"
+msgstr "**job**: O objeto Cronjob que está sendo processado"
+
+#: ../../source/digest_mail.rst:49
+msgid ""
+"**rounds**: A queryset containing all the logs that will be reported in the "
+"summary."
+msgstr ""
+"**rounds**: Um queryset contendo todos os logs que serão relatados no "
+"resumo."
+
+#: ../../source/digest_mail.rst:53
+msgid "Sending emails"
+msgstr "Enviando emails"
+
+#: ../../source/digest_mail.rst:55
+msgid ""
+"To send emails we use the `send_mail` function from the `django.core.mail` "
+"package (`see Django sending email "
+"<https://docs.djangoproject.com/en/5.2/topics/email/#send-mail>`__)."
+msgstr ""
+"Para enviar emails, usamos a função `send_mail` do pacote `django.core.mail`"
+" (`consulte Django sending email "
+"<https://docs.djangoproject.com/en/5.2/topics/email/#send-mail>`__)."
+
+#: ../../source/digest_mail.rst:58
+msgid ""
+"The text produced with the `digest_txt.html` template is sent as a `message`"
+" and the html snippet produced by the `digest_html.html` template is sent as"
+" `html_message` in case the recipient's email client is able to display "
+"html."
+msgstr ""
+"O texto produzido com o template `digest_txt.html` é enviado como "
+"`message` e o trecho de HTML produzido pelo template `digest_html.html` é "
+"enviado como `html_message`, para o caso do cliente de e-mail do destinatário "
+"ser capaz de exibir HTML."
+
+#: ../../source/digest_mail.rst:62
+msgid ""
+"The email sender (`from_email` parameter of `send_mail` function) is set to "
+"``settings.SERVER_EMAIL``, the same email address that Django uses to send "
+"error messages."
+msgstr ""
+"O remetente do e-mail (parâmetro `from_email` da função `send_mail`) é "
+"definido como ``settings.SERVER_EMAIL``, o mesmo endereço de e-mail que o "
+"Django usa para enviar mensagens de erro."
+
+#: ../../source/digest_mail.rst:66
+msgid ""
+"Email sending fails silently if the SMTP server is not correctly configured "
+"in the Django settings or if some other problem occurs."
+msgstr ""
+"O envio de e-mail falha silenciosamente se o servidor SMTP não estiver "
+"corretamente configurado nas configurações do Django ou se ocorrer algum "
+"outro problema."
+
+#: ../../source/digest_mail.rst:70
+msgid "Customizing summaries"
+msgstr "Personalizando resumos"
+
+#: ../../source/digest_mail.rst:72
+msgid ""
+"You can customize the appearance of summary reports by overwriting the "
+"templates."
+msgstr ""
+"Você pode personalizar a aparência dos relatórios de resumo sobrescrevendo "
+"os templates."
+
+#: ../../source/digest_mail.rst:75
+msgid ""
+"To define your own templates, create a `job_controller` folder inside the "
+"`templates` folder of your project or in the `templates` folder of some app "
+"in your project and then write the desired new template inside that folder, "
+"keeping the original template names."
+msgstr ""
+"Para definir seus próprios templates, crie uma pasta `job_controller` dentro "
+"da pasta `templates` do seu projeto ou na pasta `templates` de algum "
+"aplicativo do seu projeto e, em seguida, escreva o novo template desejado "
+"dentro dessa pasta, mantendo os nomes dos templates originais."
+
+#: ../../source/digest_mail.rst:80
+msgid "The original templates are these:"
+msgstr "Os templates originais são estes:"
+
+#: ../../source/digest_mail.rst:83
+msgid "job_controller/digest_txt.html"
+msgstr "job_controller/digest_txt.html"
+
+#: ../../source/digest_mail.rst:97
+msgid "job_controller/digest_html.html"
+msgstr "job_controller/digest_html.html"

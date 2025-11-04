@@ -1,0 +1,121 @@
+# DX-JOB-CONTROLLER DOCUMENTATION.
+# Copyright (C) 2025, Interlegis / Senado Federal
+# This file is distributed under the same license as the DX-JOB-CONTROLLER
+# package.
+# SESÓSTRIS VIEIRA <SEVIEIRA@SENADO.LEG.BR>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: dx-job-controller 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-29 21:38-0300\n"
+"PO-Revision-Date: 2025-10-29 21:38+0300\n"
+"Last-Translator: SESÓSTRIS VIEIRA <SEVIEIRA@SENADO.LEG.BR>\n"
+"Language-Team: pt_BR <LL@li.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/index.rst:2
+msgid "Welcome to dx-job-controller's documentation!"
+msgstr "Bem-vindo à documentação do dx-job-controller!"
+
+#: ../../source/index.rst:4
+msgid ""
+"**Dx-job-controller** is a Django admin interface for managing cronjobs "
+"created with the `django-extensions package <https://django-"
+"extensions.readthedocs.io/en/latest/jobs_scheduling.html>`__"
+msgstr ""
+"**Dx-job-controller** é uma interface admin do Django para "
+"gerenciar cronjobs criados com o pacote `django-extensions "
+"<https://django-extensions.readthedocs.io/en/latest/jobs_scheduling.html>`__"
+
+#: ../../source/index.rst:15
+msgid "Main features:"
+msgstr "Principais recursos:"
+
+#: ../../source/index.rst:10
+msgid "cronjob management via the Django admin interface,"
+msgstr "gerenciamento de cronjobs via interface admin do Django,"
+
+#: ../../source/index.rst:11
+msgid ""
+"defines the execution time of each job directly in the interface, without "
+"the need for changes to the crontab,"
+msgstr ""
+"define o tempo de execução de cada job diretamente na interface, sem a "
+"necessidade de alterações no crontab,"
+
+#: ../../source/index.rst:13
+msgid ""
+"executes concurrent jobs using `threading "
+"<https://docs.python.org/3/library/threading.html>`__,"
+msgstr ""
+"executa jobs simultâneos usando `threading "
+"<https://docs.python.org/3/library/threading.html>`__,"
+
+#: ../../source/index.rst:14
+msgid "retains job messages with each run (log),"
+msgstr "retém as mensagens de job a cada execução (log),"
+
+#: ../../source/index.rst:15
+msgid "sends emails with log summaries."
+msgstr "envia e-mails com resumos de log."
+
+#: ../../source/index.rst:18
+msgid "Getting Started"
+msgstr "Primeiros passos"
+
+#: ../../source/index.rst:20
+msgid "You can get dx-job-controller by using pip::"
+msgstr "Você pode obter o dx-job-controller usando o pip::"
+
+#: ../../source/index.rst:24
+msgid ""
+"If you want to install it from source, pip directly from git repository::"
+msgstr ""
+"Se você quiser instalá-lo a partir do código-fonte, use o pip diretamente do"
+" repositório git::"
+
+#: ../../source/index.rst:28
+msgid ""
+"For more detailed instructions check out our "
+":doc:`installation_instructions`. Enjoy."
+msgstr ""
+"Para instruções mais detalhadas, consulte nossas "
+":doc:`installation_instructions`. Aproveite."
+
+#: ../../source/index.rst:32
+msgid "Compatibility with versions of Python and Django"
+msgstr "Compatibilidade com versões do Python e do Django"
+
+#: ../../source/index.rst:34
+msgid ""
+"We follow the Django guidelines for supported Python and Django versions. "
+"See more at `Django Supported Versions "
+"<https://docs.djangoproject.com/en/dev/internals/release-process/#supported-"
+"versions>`__"
+msgstr ""
+"Seguimos as diretrizes do Django para versões suportadas do Python e do "
+"Django. Veja mais em `Versões Suportadas do Django "
+"<https://docs.djangoproject.com/en/dev/internals/release-process/#supported-"
+"versions>`__"
+
+#: ../../source/index.rst:37
+msgid ""
+"This might mean the dx-job-controller may work with older or unsupported "
+"versions but we do not guarantee it and most likely will not fix bugs "
+"related to incompatibilities with older versions."
+msgstr ""
+"Isso pode significar que o dx-job-controller pode funcionar com versões mais"
+" antigas ou não suportadas mas não garantimos isso e provavelmente não "
+"corrigiremos bugs relacionados a incompatibilidades com versões mais "
+"antigas."
+
+#: ../../source/index.rst:42
+msgid "Contents"
+msgstr "Conteúdo"

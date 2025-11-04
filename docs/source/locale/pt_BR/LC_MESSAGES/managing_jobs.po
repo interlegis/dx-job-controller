@@ -1,0 +1,282 @@
+# DX-JOB-CONTROLLER DOCUMENTATION.
+# Copyright (C) 2025, Interlegis / Senado Federal
+# This file is distributed under the same license as the DX-JOB-CONTROLLER
+# package.
+# SESÓSTRIS VIEIRA <SEVIEIRA@SENADO.LEG.BR>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: dx-job-controller 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-29 21:38-0300\n"
+"PO-Revision-Date: 2025-10-29 21:38+0300\n"
+"Last-Translator: SESÓSTRIS VIEIRA <SEVIEIRA@SENADO.LEG.BR>\n"
+"Language-Team: pt_BR <LL@li.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/managing_jobs.rst:2
+msgid "Managing jobs"
+msgstr "Gerenciando jobs"
+
+#: ../../source/managing_jobs.rst
+msgid "synopsis"
+msgstr "sinopse"
+
+#: ../../source/managing_jobs.rst:4
+msgid "How to manage your jobs in *dx-job-controller* admin interface"
+msgstr ""
+"Como gerenciar seus jobs na interface administrativa do *dx-job-"
+"controller*"
+
+#: ../../source/managing_jobs.rst:6
+msgid ""
+"After ``job_controller`` runs the first time (normally triggered by cron) "
+"the `Cronjob` table is populated with all jobs found in each app in your "
+"project."
+msgstr ""
+"Após a primeira execução do ``job_controller`` (normalmente acionada pelo "
+"cron) a tabela `Cronjob` é preenchida com todos os jobs encontrados em "
+"cada aplicativo do seu projeto."
+
+#: ../../source/managing_jobs.rst:10
+msgid "Each `Cronjob` entry has the following fields:"
+msgstr "Cada entrada `Cronjob` possui os seguintes campos:"
+
+#: ../../source/managing_jobs.rst:12
+msgid "**job** (Readonly): the cronjob class name,"
+msgstr "**job** (Somente leitura): o nome da classe do cronjob,"
+
+#: ../../source/managing_jobs.rst:13
+msgid "**app** (Readonly): the app name where the cronjob was defined,"
+msgstr ""
+"**app** (Somente leitura): o nome do aplicativo onde o cronjob foi definido,"
+
+#: ../../source/managing_jobs.rst:14
+msgid ""
+"**description** (Readonly): the cronjob `docstring` and/or cronjob `help` "
+"attribute,"
+msgstr ""
+"**descrição** (Somente leitura): a `docstring` e/ou o atributo `help` do "
+"cronjob"
+
+#: ../../source/managing_jobs.rst:16
+msgid ""
+"**CRON expression**: the moment that this job will be run, in standard "
+"`crontab format <https://help.ubuntu.com/community/CronHowto>`__,"
+msgstr ""
+"**Expressão CRON**: o momento em que este job será executado, no formato "
+"padrão `crontab <https://help.ubuntu.com/community/CronHowto>`__,"
+
+#: ../../source/managing_jobs.rst:18
+msgid ""
+"**days to retain log**: Number of days that execution logs will be kept in "
+"the database. Zero means the log will never be deleted,"
+msgstr ""
+"**Dias para reter o log**: Número de dias que os logs de execução serão "
+"mantidos no banco de dados. Zero significa que o log nunca será excluído,"
+
+#: ../../source/managing_jobs.rst:20
+msgid ""
+"**email recipient(s)**: a list of emails to send job execution reports, one "
+"per line,"
+msgstr ""
+"**Destinatário(s) do e-mail**: uma lista de e-mails para enviar relatórios "
+"de execução do job, um e-mail por linha,"
+
+#: ../../source/managing_jobs.rst:22
+msgid ""
+"**days to digest**: How many days to wait to make a summary of reports, zero"
+" means the email should be sent immediately after execution,"
+msgstr ""
+"**dias para gerar o resumo**: Quantos dias esperar para gerar um resumo dos "
+"relatórios, zero significa que o e-mail deve ser enviado imediatamente após "
+"a execução,"
+
+#: ../../source/managing_jobs.rst:24
+msgid ""
+"**report just errors**: Send reports by email only when job execution error "
+"occurs,"
+msgstr ""
+"**relatar apenas erros**: Enviar relatórios por e-mail somente quando "
+"ocorrer um erro na execução do job,"
+
+#: ../../source/managing_jobs.rst:26
+msgid ""
+"**last digest submission** (Readonly): the last time the execution report "
+"email was sent."
+msgstr ""
+"**última submissão de digest** (Somente leitura): a última vez que o e-mail do "
+"relatório de execução foi enviado."
+
+#: ../../source/managing_jobs.rst:30
+msgid "Defining when a job should run"
+msgstr "Definindo quando um job deve ser executado"
+
+#: ../../source/managing_jobs.rst:32
+msgid ""
+"for each job you can set the ``CRON expression`` to define when this job "
+"will be executed."
+msgstr ""
+"Para cada job, você pode definir a ``expressão CRON`` para definir quando"
+" este job será executado."
+
+#: ../../source/managing_jobs.rst:35
+msgid ""
+"Cron expressions must have the standard crontab format (see: `CronHowto "
+"<https://help.ubuntu.com/community/CronHowto>`__). They are evaluated by the"
+" `cron-converter <https://pypi.org/project/cron-converter/>`__ component "
+"(thanks `Andrea Salvatori <https://github.com/Sonic0>`__)."
+msgstr ""
+"As expressões cron devem ter o formato padrão do crontab (consulte: "
+"`CronHowto <https://help.ubuntu.com/community/CronHowto>`__). Elas são "
+"avaliadas pelo componente `cron-converter <https://pypi.org/project/cron-"
+"converter/>`__  (obrigado, `Andrea Salvatori "
+"<https://github.com/Sonic0>`__)."
+
+#: ../../source/managing_jobs.rst:40
+msgid ""
+"When the Crontab table is populated, the `when` property of the Job class is"
+" evaluated to set the initial value of the `CRON expression`:"
+msgstr ""
+"Quando a tabela Crontab é preenchida, a propriedade `when` da classe Job é "
+"avaliada para definir o valor inicial da `expressão CRON`:"
+
+#: ../../source/managing_jobs.rst:43
+msgid "when / crontab equivalece table"
+msgstr "when / tabela de equivalência crontab"
+
+#: ../../source/managing_jobs.rst:47
+msgid "when property"
+msgstr "propriedade when"
+
+#: ../../source/managing_jobs.rst:47
+msgid "Result `CRON expression`"
+msgstr "Expressão CRON resultante"
+
+#: ../../source/managing_jobs.rst:49
+msgid "minutely"
+msgstr "minutely (minuto a minuto)"
+
+#: ../../source/managing_jobs.rst:49
+msgid "``* * * * *``"
+msgstr "``* * * * *``"
+
+#: ../../source/managing_jobs.rst:51
+msgid "QuarterHourly"
+msgstr "QuarterHourly (quinze minutos)"
+
+#: ../../source/managing_jobs.rst:51
+msgid "``*/15 * * * *``"
+msgstr "``*/15 * * * *``"
+
+#: ../../source/managing_jobs.rst:53
+msgid "hourly"
+msgstr "hourly (hora em hora)"
+
+#: ../../source/managing_jobs.rst:53
+msgid "``0 * * * *``"
+msgstr "``0 * * * *``"
+
+#: ../../source/managing_jobs.rst:55
+msgid "daily"
+msgstr "daily (diariamente)"
+
+#: ../../source/managing_jobs.rst:55
+msgid "``0 0 * * *``"
+msgstr "``0 0 * * *``"
+
+#: ../../source/managing_jobs.rst:57
+msgid "weekly"
+msgstr "weekly (semanalmente)"
+
+#: ../../source/managing_jobs.rst:57
+msgid "``0 0 * * 0``"
+msgstr "``0 0 * * 0``"
+
+#: ../../source/managing_jobs.rst:59
+msgid "monthly"
+msgstr "monthly (mensalmente)"
+
+#: ../../source/managing_jobs.rst:59
+msgid "``0 0 1 * *``"
+msgstr "``0 0 1 * *``"
+
+#: ../../source/managing_jobs.rst:61
+msgid "yearly"
+msgstr "yearly (anualmente)"
+
+#: ../../source/managing_jobs.rst:61
+msgid "``0 0 1 1 *``"
+msgstr "``0 0 1 1 *``"
+
+#: ../../source/managing_jobs.rst:64
+msgid ""
+"If the Job class does not have a ``when`` attribute or if its value is not "
+"in the above table, then the cron expression used is ``0 0 * * *`` "
+"(`daily`)."
+msgstr ""
+"Se a classe Job não tiver um atributo ``when`` ou se o seu valor não estiver"
+" na tabela acima, a expressão cron usada será ``0 0 * * *`` (`daily`)."
+
+#: ../../source/managing_jobs.rst:68
+msgid "Job reports"
+msgstr "Relatórios de jobs"
+
+#: ../../source/managing_jobs.rst:70
+msgid ""
+"**dx-job-controller** collects job output and saves it as run logs. These "
+"logs are available for viewing and can be emailed as summary reports."
+msgstr ""
+"O **dx-job-controller** coleta a saída dos jobs e a salva como logs de "
+"execução. Esses logs estão disponíveis para visualização e podem ser "
+"enviados por e-mail como relatórios resumidos."
+
+#: ../../source/managing_jobs.rst:74
+msgid "Log retention time"
+msgstr "Tempo de retenção dos logs"
+
+#: ../../source/managing_jobs.rst:76
+msgid ""
+"You can set the number of days that logs will be kept in the database. After"
+" this period, the execution logs will be permanently deleted."
+msgstr ""
+"Você pode definir o número de dias que os logs serão mantidos no banco de "
+"dados. Após esse período, os logs de execução serão excluídos "
+"permanentemente."
+
+#: ../../source/managing_jobs.rst:80
+msgid "Email summaries"
+msgstr "Resumos por e-mail"
+
+#: ../../source/managing_jobs.rst:82
+msgid ""
+"**dx-job-controller** can email log summaries to a list of users provided by"
+" the ``email recipient(s)`` field. The summary is composed by concatenation "
+"of all logs generated in previous runs of a job."
+msgstr ""
+"O **dx-job-controller** pode enviar resumos de logs por e-mail para uma "
+"lista de usuários fornecida pelo campo ``destinatário(s) de e-mail``. O "
+"resumo é composto pela concatenação de todos os logs gerados em execuções "
+"anteriores de um job."
+
+#: ../../source/managing_jobs.rst:86
+msgid ""
+"Admin users can set the frequency, in days, of sending the summary email in "
+"the field ``days to digest``."
+msgstr ""
+"Os usuários administradores podem definir a frequência, em dias, de envio do"
+" e-mail de resumo no campo ``dias para resumo``."
+
+#: ../../source/managing_jobs.rst:89
+msgid ""
+"If the ``report just errors`` field is checked, only logs from runs where "
+"errors occurred will be added to the summary."
+msgstr ""
+"Se o campo ``relatar apenas erros`` estiver marcado, somente os registros de"
+" execuções onde ocorreram erros serão adicionados ao resumo."
