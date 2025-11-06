@@ -96,7 +96,7 @@ class Job(BaseJob):
             status=JobSchedule.STATUS_SCHEDULED,
             start__lte=timezone.localtime(),
         ):
-            thread = threading.Thread(target=self._job_starter, args=(schedule))
+            thread = threading.Thread(target=self._job_starter, args=[schedule])
             thread.start()
 
     def _job_starter(self, schedule):
