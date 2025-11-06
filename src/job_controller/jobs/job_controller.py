@@ -171,7 +171,6 @@ class Job(BaseJob):
 
     def digest_emails(self):
         """Generate log summary and send by email"""
-        breakpoint()
         print("\t", _("Generate log summary and send by email..."))
         now = timezone.now()
         jobs = Cronjob.objects.exclude(email_recipient="")
