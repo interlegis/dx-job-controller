@@ -5,7 +5,7 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.utils import timezone
 from django.utils.formats import localize
-from django.utils.translation import gettext_lazy as _, ngettext_lazy
+from django.utils.translation import gettext as _, ngettext
 from django_extensions.management.jobs import BaseJob
 from django_extensions.management.jobs import get_job, get_jobs
 from job_controller.models import Cronjob, JobSchedule
@@ -162,7 +162,7 @@ class Job(BaseJob):
             if result[0] > 0:
                 print(
                     "\t\t",
-                    ngettext_lazy(
+                    ngettext(
                         "one log deleted from '{job}' job",
                         "{count} logs deleted from '{job}' job",
                         result[0],
