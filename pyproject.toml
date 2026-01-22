@@ -26,9 +26,9 @@ classifiers = [
     "Framework :: Django :: 5.0",
 ]
 dependencies = [
-    "Django>=5,<6",
-    "cron-converter>=1,<2",
-    "django-extensions>=4,<5",
+    "Django>=4",
+    "cron-converter>=1",
+    "django-extensions>=4",
 ]
 
 [project.urls]
