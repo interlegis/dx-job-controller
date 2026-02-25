@@ -5,11 +5,11 @@ from datetime import timedelta
 from django.conf import settings
 from django.contrib import admin
 from django.core.mail import send_mail
-from django.db import models
+from django.db import models, transaction, utils
 from django.utils import timezone
 from django.utils.formats import localize
 from django.utils.html import format_html
-from django.utils.translation import gettext_lazy as _, ngettext_lazy
+from django.utils.translation import gettext as _, ngettext
 from django_extensions.management.jobs import get_job, get_jobs
 
 
@@ -208,7 +208,7 @@ class JobSchedule(models.Model):
         result = []
         if self.time_spent.days > 0:
             result.append(
-                ngettext_lazy(
+                ngettext(
                     "one day",
                     "{days} days",
                     self.time_spent.days,
@@ -218,28 +218,28 @@ class JobSchedule(models.Model):
         if seconds > 0:
             if seconds >= 3600:
                 result.append(
-                    ngettext_lazy(
+                    ngettext(
                         "one hour", "{hours} hours", seconds // 3600
                     ).format(hours=seconds // 3600)
                 )
                 seconds = seconds % 3600
             if seconds >= 60:
                 result.append(
-                    ngettext_lazy(
+                    ngettext(
                         "one minute", "{minutes} minutes", seconds // 60
                     ).format(minutes=seconds // 60)
                 )
                 seconds = seconds % 60
             if seconds > 0:
                 result.append(
-                    ngettext_lazy(
-                        "one second", "{seconds} seconds", seconds
-                    ).format(seconds=seconds)
+                    ngettext("one second", "{seconds} seconds", seconds).format(
+                        seconds=seconds
+                    )
                 )
         else:
             if self.time_spent.microseconds > 0:
                 result.append(
-                    ngettext_lazy(
+                    ngettext(
                         "one microsecond",
                         "{microseconds} microseconds",
                         self.time_spent.microseconds,
@@ -266,6 +266,21 @@ class JobSchedule(models.Model):
             time_spent=localize(self.time_spent),
         )
 
+    @classmethod
+    def __prepare_to_run(cls, schedule_id):
+        with transaction.atomic():
+            try:
+                schedule_obj = cls.objects.select_for_update(nowait=True).get(
+                    pk=schedule_id
+                )
+            except utils.OperationalError:
+                raise cls.DoesNotExecute()
+            if schedule_obj.status != cls.STATUS_SCHEDULED:
+                raise cls.DoesNotExecute()
+            schedule_obj.started = timezone.localtime()
+            schedule_obj.status = cls.STATUS_RUNNING
+            schedule_obj.save()
+
     def run_job(self):
         """
         Run the scheduled job.
@@ -275,15 +290,12 @@ class JobSchedule(models.Model):
 
         Raises:
             JobSchedule.DoesNotExecute: if the job schedule is not in
-            JobSchedule.STATUS_SCHEDULED status
+            JobSchedule.STATUS_SCHEDULED status or if cant lock it to update
         """
 
-        if self.status != JobSchedule.STATUS_SCHEDULED:
-            raise JobSchedule.DoesNotExecute()
+        JobSchedule.__prepare_to_run(self.pk)
+        self.refresh_from_db()
 
-        self.started = timezone.localtime()
-        self.status = JobSchedule.STATUS_RUNNING
-        self.save()
         has_errors, result = self.job.run()
         self.result = result
         self.has_errors = has_errors
