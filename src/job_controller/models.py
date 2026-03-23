@@ -121,17 +121,13 @@ class Cronjob(models.Model):
                 errors = se_buf.getvalue()
             report_data = []
             if messages:
-                report_data.extend(
-                    ["", _("MESSAGES"), "-" * len(_("MESSAGES")), ""]
-                )
-                report_data.extend(messages.splitlines())
+                report_data.extend(["", "MESSAGES", "--------", ""])
+                report_data.extend(map(str, messages.splitlines()))
             has_errors = False
             if errors:
                 has_errors = True
-                report_data.extend(
-                    ["", _("ERRORS"), "-" * len(_("ERRORS")), ""]
-                )
-                report_data.extend(errors.splitlines())
+                report_data.extend(["", "ERRORS", "------", ""])
+                report_data.extend(map(str, errors.splitlines()))
             return (has_errors, "\n".join(report_data))
         except Exception as e:
             # Any error must be reported
