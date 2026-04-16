@@ -4,7 +4,7 @@
   {% if job.digest_days == 0 %}
     {% translate "report" %}
   {% else %}
-    {% blocktranslate with digest_days=job.digest_days %}Last {digest_days} days{% endblocktranslate %}
+    {% blocktranslate with digest_days=job.digest_days %}Last {{ digest_days }} days{% endblocktranslate %}
   {% endif %}
 </h1>
 
