@@ -1,26 +1,26 @@
-# DX-JOB-CONTROLLER - en.
-# Copyright (C) 2025 INTERLEGIS / BRAZILIAN FEDERAL SENATE
-# This file is distributed under the same license as the DX-JOB-CONTROLLER package.
-# SESOSTRIS VIEIRA <SEVIEIRA@SENADO.LEG.BR>, 2025.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0.0\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-04 18:04+0000\n"
-"PO-Revision-Date: 2025-10-30 14:26+0000\n"
-"Last-Translator: SESOSTRIS VIEIRA <SEVIEIRA@SENADO.LEG.BR>\n"
+"POT-Creation-Date: 2026-04-15 22:26-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: pt_BR\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: job_controller/admin.py:32
 msgid "view/run"
-msgstr "ver/executar"
+msgstr "Ver/executar"
 
 #: job_controller/admin.py:94
 msgid "next schedule"
@@ -28,7 +28,7 @@ msgstr "próximo agendamento"
 
 #: job_controller/admin.py:98
 msgid "No schedules for this job"
-msgstr "Nenhum agendamento para este job"
+msgstr "Sem agendamentos para este job"
 
 #: job_controller/admin.py:100
 #, python-brace-format
@@ -38,12 +38,12 @@ msgstr "início agendado para {start}"
 #: job_controller/admin.py:104
 #, python-brace-format
 msgid "running since {start}"
-msgstr "em execução desde {start}"
+msgstr "executando deste {start}"
 
 #: job_controller/admin.py:108
 #, python-brace-format
 msgid "executed at {started}, taking {time_spent} to complete"
-msgstr "executado em {started}, levando {time_spent} para concluir"
+msgstr "executado em {started}, gastando {time_spent} para terminar"
 
 #: job_controller/admin.py:115 job_controller/admin.py:191
 msgid "run"
@@ -52,44 +52,44 @@ msgstr "executar"
 #: job_controller/admin.py:126 job_controller/admin.py:205
 #, python-brace-format
 msgid "This schedule cannot be executed because its status is {status}"
-msgstr "Esta tarefa não pode ser executada porque seu status é {status}"
+msgstr "Este agendamento não pode ser executado porque seu status é {status}"
 
 #: job_controller/admin.py:133 job_controller/admin.py:213
 msgid "Job executed!"
-msgstr "Tarefa executada!"
+msgstr "Job executado!"
 
 #: job_controller/admin.py:219
 msgid "Job cannot be runned!"
-msgstr "A tarefa não pode ser executada!"
+msgstr "Job não pode ser executado!"
 
 #: job_controller/jobs/job_controller.py:25
 msgid "Main job controller"
-msgstr "Controlador de tarefas principal"
+msgstr "Job controlador principal"
 
 #: job_controller/jobs/job_controller.py:28
 msgid "Running job controller"
-msgstr "Executando o controlador de tarefas"
+msgstr "Executando o controlador de jobs"
 
 #: job_controller/jobs/job_controller.py:44
 msgid "Remove from the jobs table those that were removed from the code..."
-msgstr "Remove da tabela de tarefas aquelas que foram removidas do código..."
+msgstr "Remover da tabela de jobs aqueles que foram removidos do código..."
 
 #: job_controller/jobs/job_controller.py:61
 msgid "Update the jobs table with the new jobs that have been created..."
-msgstr "Atualiza a tabela de tarefas com as novas tarefas que foram criadas..."
+msgstr "Atualizar a tabela de jobs com novos jobs que foram criados..."
 
 #: job_controller/jobs/job_controller.py:87
 #, python-brace-format
 msgid "New job found at {app_name}: {job_name}: {help}"
-msgstr "Nova tarefa encontrada em {app_name}: {job_name}: {help}"
+msgstr "Novo job encontrado em {app_name}: {job_name}: {help}"
 
 #: job_controller/jobs/job_controller.py:94
 msgid "Run scheduled jobs..."
-msgstr "Executar tarefas agendadas..."
+msgstr "Executar jobs agendados..."
 
 #: job_controller/jobs/job_controller.py:104
 msgid "no job to run"
-msgstr "nenhuma tarefa para executar"
+msgstr "nenhum job para executar"
 
 #: job_controller/jobs/job_controller.py:108
 #, python-brace-format
@@ -99,14 +99,12 @@ msgstr "{job_name} iniciado em {start}"
 #: job_controller/jobs/job_controller.py:118
 #, python-brace-format
 msgid "Error trying run job {job_name}: job schedule in '{status}' status."
-msgstr ""
-"Erro ao tentar executar a tarefa {job_name}: agendamento de tarefas com "
-"status '{status}'."
+msgstr "Erro ao tentar executar o job {job_name}: agendamento com status {status}."
 
 #: job_controller/jobs/job_controller.py:127
 #, python-brace-format
 msgid "{job_name} finished at {finish}"
-msgstr "{job_name} finalizado em {finish}"
+msgstr "{job_name} concluído em {finish}"
 
 #: job_controller/jobs/job_controller.py:134
 msgid "Create schedule for next run..."
@@ -115,31 +113,31 @@ msgstr "Criar agendamento para a próxima execução..."
 #: job_controller/jobs/job_controller.py:144
 #, python-brace-format
 msgid "Scheduled job {job_name} for {start}"
-msgstr "Tarefa {job_name} agendada para {start}"
+msgstr "Job {job_name} agendado para {start}"
 
 #: job_controller/jobs/job_controller.py:151
 msgid "Delete old logs..."
-msgstr "Excluir logs antigos..."
+msgstr "Apagar logs antigos..."
 
 #: job_controller/jobs/job_controller.py:166
 #, python-brace-format
 msgid "one log deleted from '{job}' job"
 msgid_plural "{count} logs deleted from '{job}' job"
-msgstr[0] "Um registro excluído da tarefa '{job}'"
-msgstr[1] "{count} registros excluídos da tarefa '{job}'"
+msgstr[0] "um log apagado do job '{job}'"
+msgstr[1] "{count} logs apagados do job '{job}'"
 
-#: job_controller/jobs/job_controller.py:175
+#: job_controller/jobs/job_controller.py:174
 msgid "Generate log summary and send by email..."
-msgstr "Gerar resumo do log e enviar por e-mail..."
+msgstr "Gerar sumário de logs e enviar por e-mail..."
 
-#: job_controller/jobs/job_controller.py:205
+#: job_controller/jobs/job_controller.py:204
 #, python-brace-format
 msgid "Digest JOB: {job_name}"
 msgstr "Resumo do JOB: {job_name}"
 
 #: job_controller/models.py:17
 msgid "app"
-msgstr "app"
+msgstr "aplicativo"
 
 #: job_controller/models.py:18
 msgid "job"
@@ -147,7 +145,7 @@ msgstr "job"
 
 #: job_controller/models.py:20
 msgid "CRON expression"
-msgstr "Expressão CRON"
+msgstr "expressão CRON"
 
 #: job_controller/models.py:24
 msgid ""
@@ -160,7 +158,7 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"            Use expressões no formato CRON padrão:<br/>\n"
+"            Use expressões no formato padrão do CRON:<br/>\n"
 "            <code>minuto hora dia mês dia-da-semana</code><br/>\n"
 "            Mais detalhes:\n"
 "            <a href='https://help.ubuntu.com/community/CronHowto'>CronHowTo</"
@@ -169,40 +167,39 @@ msgstr ""
 
 #: job_controller/models.py:33
 msgid "days to retain log"
-msgstr "dias para reter o log"
+msgstr "dias para reter log"
 
 #: job_controller/models.py:35
 msgid ""
 "Number of days that execution logs will be kept in the database. Zero means "
 "the log will never be deleted."
 msgstr ""
-"Número de dias que os logs de execução serão mantidos no banco de dados. "
-"Zero significa que o log nunca será excluído."
+"Número de dias que os logs de execução serão mantidos no banco de dados. Zero significa "
+"que os log nunca devem ser apagados."
 
 #: job_controller/models.py:41
 msgid "email recipient(s)"
-msgstr "destinatário(s) do e-mail"
+msgstr "caixa(s) de e-mail"
 
 #: job_controller/models.py:43
 msgid ""
 "E-mails to send job execution reports.<br/>Enter one email address per line. "
 "Leave empty to not send e-mail reports"
 msgstr ""
-"E-mails para enviar relatórios de execução de tarefas.<br/>Insira um "
-"endereço de e-mail por linha. Deixe em branco para não enviar relatórios por "
-"e-mail"
+"E-mails para enviar relatórios de execução do job.<br/>Entre um endereço de e-mail por linha. "
+"Deixe vazio para não enviar relatórios por e-mail"
 
 #: job_controller/models.py:50
 msgid "days to digest"
-msgstr "dias para gerar o resumo"
+msgstr "Dias para digest"
 
 #: job_controller/models.py:53
 msgid ""
 "How many days to wait to make a summary of reports.<br/>zero means the email "
 "should be sent immediately after execution."
 msgstr ""
-"Quantos dias esperar para gerar um resumo dos relatórios.<br/>zero significa "
-"que o e-mail deve ser enviado imediatamente após a execução."
+"Quantos dias esperar para fazer um sumário dos relatórios.<br/>zero significa que "
+"o e-mail com relatório deve ser enviado imediatamente após a execução."
 
 #: job_controller/models.py:58
 msgid "report just errors"
@@ -210,13 +207,11 @@ msgstr "reportar apenas erros"
 
 #: job_controller/models.py:61
 msgid "Send reports by email only when job execution error occurs"
-msgstr ""
-"Enviar relatórios por e-mail somente quando ocorrer um erro de execução do "
-"job"
+msgstr "Enviar relatórios por e-mail apenas quando ocorrer erros na execução do job"
 
 #: job_controller/models.py:65
 msgid "last digest submission"
-msgstr "última submissão de digest"
+msgstr "último envio do resumo"
 
 #: job_controller/models.py:75
 msgid "description"
@@ -225,135 +220,127 @@ msgstr "descrição"
 #: job_controller/models.py:80
 #, python-brace-format
 msgid "The job {app_name}.{job_name} was not found."
-msgstr "A tarefa {app_name}.{job_name} não foi encontrada."
+msgstr "O job {app_name}.{job_name} não foi encontrado."
 
 #: job_controller/models.py:95
 msgid "Cron job"
-msgstr "Job agendado"
+msgstr "Job de cron"
 
 #: job_controller/models.py:96
 msgid "Cron jobs"
-msgstr "Jobs agendados"
+msgstr "Jobs de cron"
 
 #: job_controller/models.py:108
 #, python-brace-format
 msgid "The JOB routine {job_name} of the app {app_name} was not found."
-msgstr "A rotina JOB {job_name} do aplicativo {app_name} não foi encontrada."
+msgstr "A rotina de job {job_name} do aplicativo {app_name} não foi encontrada."
 
-#: job_controller/models.py:125
-msgid "MESSAGES"
-msgstr "MENSAGENS"
-
-#: job_controller/models.py:132
-msgid "ERRORS"
-msgstr "ERROS"
-
-#: job_controller/models.py:140
+#: job_controller/models.py:136
 #, python-brace-format
 msgid "Job aborted with error: {str_err}"
 msgstr "Job abortado com erro: {str_err}"
 
-#: job_controller/models.py:171
+#: job_controller/models.py:167
 msgid "Scheduled"
 msgstr "Agendado"
 
-#: job_controller/models.py:172
+#: job_controller/models.py:168
 msgid "Running"
-msgstr "Em execução"
+msgstr "Executando"
 
-#: job_controller/models.py:173
+#: job_controller/models.py:169
 msgid "Finished"
 msgstr "Concluído"
 
-#: job_controller/models.py:176
+#: job_controller/models.py:172
 msgid "cron job"
-msgstr "tarefa cron"
+msgstr "job de cron"
 
-#: job_controller/models.py:178
+#: job_controller/models.py:174
 msgid "start at"
 msgstr "iniciar em"
 
-#: job_controller/models.py:179
+#: job_controller/models.py:175
 msgid "started at"
 msgstr "iniciado em"
 
-#: job_controller/models.py:181
+#: job_controller/models.py:177
 msgid "status"
 msgstr "status"
 
-#: job_controller/models.py:187
+#: job_controller/models.py:183
 msgid "time spent on execution"
 msgstr "tempo gasto na execução"
 
-#: job_controller/models.py:189
+#: job_controller/models.py:185
 msgid "execution result"
 msgstr "resultado da execução"
 
-#: job_controller/models.py:190
+#: job_controller/models.py:186
 msgid "has errors"
-msgstr "apresenta erros"
+msgstr "possui erros"
 
-#: job_controller/models.py:195
+#: job_controller/models.py:191
 msgid "run schedule"
 msgstr "executar agendamento"
 
-#: job_controller/models.py:196
+#: job_controller/models.py:192
 msgid "run schedules"
 msgstr "executar agendamentos"
 
-#: job_controller/models.py:207
+#: job_controller/models.py:203
 msgid "no time"
-msgstr "sem tempo"
+msgstr "nenhum tempo"
 
-#: job_controller/models.py:212
+#: job_controller/models.py:208
 #, python-brace-format
 msgid "one day"
 msgid_plural "{days} days"
 msgstr[0] "um dia"
 msgstr[1] "{days} dias"
 
-#: job_controller/models.py:222
+#: job_controller/models.py:218
 #, python-brace-format
 msgid "one hour"
 msgid_plural "{hours} hours"
 msgstr[0] "uma hora"
 msgstr[1] "{hours} horas"
 
-#: job_controller/models.py:229
+#: job_controller/models.py:225
 #, python-brace-format
 msgid "one minute"
 msgid_plural "{minutes} minutes"
 msgstr[0] "um minuto"
 msgstr[1] "{minutes} minutos"
 
-#: job_controller/models.py:236
+#: job_controller/models.py:231
 #, python-brace-format
 msgid "one second"
 msgid_plural "{seconds} seconds"
 msgstr[0] "um segundo"
 msgstr[1] "{seconds} segundos"
 
-#: job_controller/models.py:243
+#: job_controller/models.py:239
 #, python-brace-format
 msgid "one microsecond"
 msgid_plural "{microseconds} microseconds"
 msgstr[0] "um microssegundo"
 msgstr[1] "{microseconds} microssegundos"
 
-#: job_controller/models.py:252
+#: job_controller/models.py:248
 #, python-brace-format
 msgid "{job_name}: scheduled start for {start}."
 msgstr "{job_name}: início agendado para {start}."
 
-#: job_controller/models.py:257
+#: job_controller/models.py:253
 #, python-brace-format
 msgid "{job_name}: running since {started}"
-msgstr "{job_name}: em execução desde {started}"
+msgstr "{job_name}: executando desde {started}"
 
-#: job_controller/models.py:262
+#: job_controller/models.py:258
 #, python-brace-format
 msgid "{job_name}: run on {started}, taking {time_spent} to complete"
-msgstr "{job_name}: executado em {started}, levando {time_spent} para concluir"
+msgstr "{job_name}: executado em {started}, gastando {time_spent} para concluir"
 
 #: job_controller/templates/job_controller/digest_html.html:5
 #: job_controller/templates/job_controller/digest_txt.html:1
@@ -362,9 +349,9 @@ msgstr "relatório"
 
 #: job_controller/templates/job_controller/digest_html.html:7
 #: job_controller/templates/job_controller/digest_txt.html:1
-#, python-brace-format
-msgid "Last {digest_days} days"
-msgstr "Últimos {digest_days} dias"
+#, python-format
+msgid "Last %(digest_days)s days"
+msgstr "Últimos %(digest_days)s dias"
 
 #: job_controller/templates/job_controller/digest_html.html:15
 #, python-format
@@ -374,8 +361,9 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"          executado em %(started)s, levando %(time_spent)s para terminar:\n"
+"          executado em %(started)s gastando %(time_spent)s para concluir:\n"
 "        "
+
 
 #: job_controller/templates/job_controller/digest_html.html:20
 #: job_controller/templates/job_controller/digest_txt.html:4
@@ -385,4 +373,4 @@ msgstr " nenhum relatório"
 #: job_controller/templates/job_controller/digest_txt.html:4
 #, python-format
 msgid "* runned at %(started)s taking %(time_spent)s to finish:"
-msgstr "* executado em %(started)s, levando %(time_spent)s para terminar:"
+msgstr "* executado em %(started)s gastando %(time_spent)s para concluir:"
