@@ -211,3 +211,5 @@ class Job(BaseJob):
                 html_message=html_message,
             )
             all_rounds.update(reported=True)
+            job.last_digest = timezone.now()
+            job.save()
