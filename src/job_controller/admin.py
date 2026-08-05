@@ -121,12 +121,15 @@ class CronjobAdmin(admin.ModelAdmin):
         cronjob = get_object_or_404(Cronjob, id=object_id)
         sched = cronjob.next_schedule()
         if sched.status != JobSchedule.STATUS_SCHEDULED:
-            raise PermissionDenied(
+            self.message_user(
+                request,
                 _(
                     "This schedule cannot be executed because its "
                     "status is {status}"
-                ).format(status=sched.get_status_display())
+                ).format(status=sched.get_status_display()),
+                messages.ERROR,
             )
+            return
         sched.run_job()
         self.message_user(
             request,
