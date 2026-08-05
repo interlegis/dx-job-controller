@@ -125,8 +125,8 @@ class CronjobAdmin(admin.ModelAdmin):
                 _(
                     "This schedule cannot be executed because its "
                     "status is {status}"
-                )
-            ).format(status=sched.get_status_display())
+                ).format(status=sched.get_status_display())
+            )
         sched.run_job()
         self.message_user(
             request,
