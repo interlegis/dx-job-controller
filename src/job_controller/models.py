@@ -16,18 +16,19 @@ from django_extensions.management.jobs import get_job, get_jobs
 class Cronjob(models.Model):
     app_name = models.CharField(_("app"), max_length=100, editable=False)
     job_name = models.CharField(_("job"), max_length=100, editable=False)
+    never_execute = models.BooleanField(
+        _("Never execute this job"), default=False
+    )
     cron_expression = models.CharField(
         _("CRON expression"),
         max_length=100,
         default="* * * * *",
-        help_text=_(
-            """
+        help_text=_("""
             Use expressions in standard CRON format:<br/>
             <code>minute hour day month day-of-week</code><br/>
             More details:
             <a href='https://help.ubuntu.com/community/CronHowto'>CronHowTo</a>
-            """
-        ),
+            """),
     )
     log_duration = models.PositiveIntegerField(
         _("days to retain log"),

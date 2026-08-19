@@ -93,6 +93,7 @@ class Job(BaseJob):
         """Run scheduled jobs"""
         print("\t", _("Run scheduled jobs..."))
         for schedule in JobSchedule.objects.filter(
+            never_execute=False,
             status=JobSchedule.STATUS_SCHEDULED,
             start__lte=timezone.localtime(),
         ):
@@ -133,10 +134,11 @@ class Job(BaseJob):
         """Create schedule for next run"""
         print("\t", _("Create schedule for next run..."))
         for job in Cronjob.objects.exclude(
+            never_execute=False,
             jobschedule__status__in=[
                 JobSchedule.STATUS_SCHEDULED,
                 JobSchedule.STATUS_RUNNING,
-            ]
+            ],
         ):
             schedule = job.next_schedule()
             print(
@@ -173,7 +175,7 @@ class Job(BaseJob):
         """Generate log summary and send by email"""
         print("\t", _("Generate log summary and send by email..."))
         now = timezone.now()
-        jobs = Cronjob.objects.exclude(email_recipient="")
+        jobs = Cronjob.objects.exclude(never_execute=False, email_recipient="")
         for job in jobs:
             if not (
                 job.last_digest is None
