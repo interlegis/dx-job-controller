@@ -54,14 +54,17 @@ class CronjobAdmin(admin.ModelAdmin):
         "app_name",
         "get_description",
         "cron_expression",
+        "never_execute",
         "get_schedule",
         "get_runner",
         "last_digest",
     )
+    list_filter = ["app_name", "never_execute"]
     fields = [
         "job_name",
         "app_name",
         "get_description",
+        "never_execute",
         "cron_expression",
         "log_duration",
         "email_recipient",

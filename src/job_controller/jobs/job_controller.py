@@ -134,7 +134,7 @@ class Job(BaseJob):
         """Create schedule for next run"""
         print("\t", _("Create schedule for next run..."))
         for job in Cronjob.objects.exclude(
-            never_execute=False,
+            never_execute=True,
             jobschedule__status__in=[
                 JobSchedule.STATUS_SCHEDULED,
                 JobSchedule.STATUS_RUNNING,
@@ -175,7 +175,7 @@ class Job(BaseJob):
         """Generate log summary and send by email"""
         print("\t", _("Generate log summary and send by email..."))
         now = timezone.now()
-        jobs = Cronjob.objects.exclude(never_execute=False, email_recipient="")
+        jobs = Cronjob.objects.exclude(never_execute=True, email_recipient="")
         for job in jobs:
             if not (
                 job.last_digest is None
