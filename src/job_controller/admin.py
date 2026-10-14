@@ -5,7 +5,7 @@ from django.urls import reverse, path
 from django.utils import timezone
 from django.utils.formats import localize
 from django.utils.safestring import mark_safe
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 from django_extensions.management.jobs import get_job, get_jobs
 from .models import Cronjob, JobSchedule
 

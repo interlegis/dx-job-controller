@@ -9,7 +9,7 @@ from django.db import models, transaction, utils
 from django.utils import timezone
 from django.utils.formats import localize
 from django.utils.html import format_html
-from django.utils.translation import gettext as _, ngettext
+from django.utils.translation import gettext_lazy as _, ngettext_lazy
 from django_extensions.management.jobs import get_job, get_jobs
 
 
@@ -205,7 +205,7 @@ class JobSchedule(models.Model):
         result = []
         if self.time_spent.days > 0:
             result.append(
-                ngettext(
+                ngettext_lazy(
                     "one day",
                     "{days} days",
                     self.time_spent.days,
@@ -215,28 +215,28 @@ class JobSchedule(models.Model):
         if seconds > 0:
             if seconds >= 3600:
                 result.append(
-                    ngettext(
+                    ngettext_lazy(
                         "one hour", "{hours} hours", seconds // 3600
                     ).format(hours=seconds // 3600)
                 )
                 seconds = seconds % 3600
             if seconds >= 60:
                 result.append(
-                    ngettext(
+                    ngettext_lazy(
                         "one minute", "{minutes} minutes", seconds // 60
                     ).format(minutes=seconds // 60)
                 )
                 seconds = seconds % 60
             if seconds > 0:
                 result.append(
-                    ngettext("one second", "{seconds} seconds", seconds).format(
-                        seconds=seconds
-                    )
+                    ngettext_lazy(
+                        "one second", "{seconds} seconds", seconds
+                    ).format(seconds=seconds)
                 )
         else:
             if self.time_spent.microseconds > 0:
                 result.append(
-                    ngettext(
+                    ngettext_lazy(
                         "one microsecond",
                         "{microseconds} microseconds",
                         self.time_spent.microseconds,
