@@ -93,7 +93,7 @@ class Job(BaseJob):
         """Run scheduled jobs"""
         print("\t", _("Run scheduled jobs..."))
         for schedule in JobSchedule.objects.filter(
-            never_execute=False,
+            job__never_execute=False,
             status=JobSchedule.STATUS_SCHEDULED,
             start__lte=timezone.localtime(),
         ):
